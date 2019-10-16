@@ -6,14 +6,28 @@ body {
     background: #5470B0;
     color: white;
     font-family: 'Courier New', Courier, monospace;
+    margin: 0;
 }
 
 main {
     padding: 20px;
+    height: 100vh;
+    position: relative;
+}
+
+main.blacked::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.548);
+    pointer-events: none;    
 }
 
 p {
-    margin: 0;
+    margin: 10px;    
 }
 
 @keyframes expand {
@@ -34,13 +48,17 @@ p {
 
 #addPopup {
     background: #BDFCED;
-    color: #00DECF;
+    color: rgb(95, 81, 114);
     font-size: 40px;
     padding: 10px;
     border-radius: 3px;
     border: 0;
     cursor: pointer;
     margin: 40px 20px;
+}
+
+#addPopup:hover {
+    color: rgb(170, 142, 202);
 }
   .add-box:focus {
     outline: 0;
@@ -58,6 +76,7 @@ p {
     width: 244px;
     height: 192px;
     border-radius: 10px;
+    z-index: 9;
 }
 
 .pop-up.remove {
